@@ -13,7 +13,7 @@ services:
     restart: always
 
   container-statis:
-    image: donisetiawan25/uas-doni:latest
+    image: donisetiawan25/uas-doni:statis
     ports:
       - "80:80"
     restart: always
