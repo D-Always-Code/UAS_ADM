@@ -1,0 +1,151 @@
+/* ══════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════ */
+:root {
+  --obsidian:    #07050a;
+  --coal:        #110d18;
+  --ash:         #1c1625;
+  --parchment:   #f0ddb4;
+  --parch-dark:  #c4a96a;
+  --gold:        #c9a84c;
+  --gold-bright: #ffd97a;
+  --ember:       #ff5e00;
+  --blood:       #7a0000;
+  --crimson:     #b91c1c;
+  --steel:       #6b7a8d;
+  --steel-light: #9baaba;
+  --ink:         #2a1f0e;
+}
+
+/* ══════════════════════════════════
+   RESET & BASE
+══════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--obsidian);
+  color: var(--parchment);
+  font-family: var(--font-body), serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+::selection { background: var(--gold); color: var(--ink); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--obsidian); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ══════════════════════════════════
+   UTILITIES
+══════════════════════════════════ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, var(--parch-dark), var(--gold-bright), var(--parch-dark));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmer-text 4s linear infinite;
+}
+
+@keyframes shimmer-text {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ══════════════════════════════════
+   BUTTONS
+══════════════════════════════════ */
+.btn-primary {
+  font-family: var(--font-head), serif;
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 1rem 2.8rem;
+  background: linear-gradient(135deg, var(--blood), var(--crimson));
+  color: var(--parchment);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.35s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.15), transparent);
+  opacity: 0; transition: opacity 0.35s;
+}
+.btn-primary:hover { 
+  box-shadow: 0 0 25px rgba(185,28,28,0.5), 0 0 60px rgba(122,0,0,0.2); 
+  transform: translateY(-2px); 
+}
+.btn-primary:hover::before { opacity: 1; }
+
+.btn-ghost {
+  font-family: var(--font-head), serif;
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 1rem 2.8rem;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.5);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.35s;
+  display: inline-block;
+  text-align: center;
+}
+.btn-ghost:hover {
+  background: rgba(201,168,76,0.08);
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(201,168,76,0.15);
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════
+   SCROLL REVEAL (Intersection Observer utility classes)
+══════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0; transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0; transform: translateX(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Rune Divider */
+.rune-divider {
+  text-align: center;
+  font-family: var(--font-head), serif;
+  font-size: 0.75rem;
+  letter-spacing: 8px;
+  color: rgba(201,168,76,0.3);
+  text-transform: uppercase;
+  padding: 0.5rem 0 2.5rem;
+  user-select: none;
+}
