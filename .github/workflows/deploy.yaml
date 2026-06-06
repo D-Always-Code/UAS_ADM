@@ -31,7 +31,6 @@ jobs:
         key: ${{ secrets.AWS_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /home/ubuntu 
-          docker compose -f docker-compose.yml down
-          docker compose -f docker-compose.yml pull
-          docker compose -f docker-compose.yml up -d
+          cd /home/ubuntu/container-dinamis/web-dinamis
+          sudo docker compose pull
+          sudo docker compose up -d
