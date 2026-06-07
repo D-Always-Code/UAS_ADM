@@ -69,7 +69,7 @@ Digunakan oleh aplikasi Next.js dan MariaDB di dalam `docker-compose.yml` agar s
 
 Berikut adalah bukti dokumentasi bahwa keseluruhan alur CI/CD dari proses *build image* hingga eksekusi instalasi di server EC2 telah berjalan dengan sukses tanpa error (Indikator Hijau):
 
-![Bukti Deploy GitHub Actions](./browser_dinamis.png)
-![Bukti Deploy GitHub Actions](./browser_statis.png)
+![Bukti Deploy GitHub Actions](./deploy_dinamis_github.png)
+![Bukti Deploy GitHub Actions](./deploy_statis_github.png)
 ![Bukti Deploy Browser](./browser_dinamis.png)
 ![Bukti Deploy Browser](./browser_statis.png)
