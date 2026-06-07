@@ -29,7 +29,7 @@ services:
       DB_NAME: uas_adm_doni
       DB_HOST: db-webdinamis
       NEXTAUTH_SECRET: ini-kata-kata-bebas-saja-32-karekter
-      NEXTAUTH_URL: http://3.25.181.208:3000
+      NEXTAUTH_URL: http://52.221.230.120:3000
     depends_on:
       - db-webdinamis
 
