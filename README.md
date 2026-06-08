@@ -2,6 +2,16 @@
 
 Repositori ini berisi keseluruhan source code untuk Ujian Akhir Semester (UAS) mata kuliah Administrasi Server. Terdiri dari dua jenis layanan web (Statis dan Dinamis) yang di-deploy ke AWS EC2 menggunakan Docker dan CI/CD dari GitHub Actions.
 
+# alur pembuatan
+1.Install ec2
+![alt text](image.png)
+2.repo docker
+![alt text](image-1.png)
+3.Install docker engine
+![alt text](image-3.png)
+4.port security aws
+![alt text](image-2.png)
+
 ## Tautan Akses Langsung (AWS EC2)
 
 Aplikasi telah berhasil di-deploy ke server cloud AWS EC2 dan dapat diakses publik melalui tautan berikut:
